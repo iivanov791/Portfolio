@@ -1,0 +1,27 @@
+.app {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  .sections {
+    height: calc(100vh - 70px);
+    width: 100%;
+    background-color: lightsalmon;
+    scroll-behavior: smooth;
+    position: relative;
+    top: 70px;
+    //доводчик скроллинга
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none; // for firefox
+    &::-webkit-scrollbar {
+      display: none;           // hiding y scrollbar
+    }
+
+    > *{
+      width: 100vw;
+      height: calc(100vh - 70px);
+      //позиция куда скроллинг должен доводиться
+      scroll-snap-align: start;
+    }
+  }
+}
